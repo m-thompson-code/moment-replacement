@@ -11,11 +11,7 @@ describe('DateService', () => {
   });
 
   beforeEach(() => {
-    spyOn(Date, "now").and.callFake(() => {
-      const mock = new Date('1990-09-01');
-      
-      return mock.valueOf() + mock.getTimezoneOffset() * 60 * 1000;
-    });
+    jasmine.clock().mockDate(new Date(1990, 8, 1));
   });
 
   it('should be created', () => {
