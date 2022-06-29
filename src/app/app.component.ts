@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DateService } from './services/date.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'moment-replacement';
+  protected readonly tomorrow: string;
+
+  constructor(private readonly dateService: DateService) {
+    this.tomorrow = this.dateService.getTomorrowData();//'2022/06/30';
+  }
 }
