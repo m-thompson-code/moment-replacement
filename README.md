@@ -66,16 +66,13 @@ Analyzing how each solution affects the overall bundle for my demo shows:
 
 This makes sense since by avoiding any extra libraries, there's no risk of bloating my application bundle size. Only downside is that implmentation took much longer than using an existing library.
 
-[Using MomentJS](https://m-thompson-code.github.io/moment-replacement/assets/sme-result-momentjs.html) impacts my bundle size the most. Total size is **575.18 KB**.
+[Using MomentJS](https://m-thompson-code.github.io/moment-replacement/assets/sme-result-momentjs.html) impacts my bundle size the most. Total size is **575.18 KB**. Using MomentJS bloats my application significately. The MomentJS library results in being **64.8%** of my total bundle size. This is because MomentJS is not [treeshakable](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking) and results in importing the entire library regardless of how little it is used. 
 
-Using MomentJS bloats my application significately. The MomentJS library results in being **64.8%** of my total bundle size. This is because MomentJS is not treeshakable and results in importing the entire library regardless of how little it is used.
-
-
-[Using date-fns](https://m-thompson-code.github.io/moment-replacement/assets/sme-result-date-fns.html) increases my application bundle size by **20.79 KB**. Total size is **222.65 KB**. The date-fns library results in being **9.3%** of my total bundle size. This is a huge improvement over importing MomentJS. This is because date-fns is treeshakable.
+[Using date-fns](https://m-thompson-code.github.io/moment-replacement/assets/sme-result-date-fns.html) increases my application bundle size by **20.79 KB**. Total size is **222.65 KB**. The date-fns library results in being **9.3%** of my total bundle size. This is a huge improvement over importing MomentJS. This is because date-fns is [treeshakable](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking).
 
 ## Conclusion
 
-Depending on how much time I want to spend implementing all my requirements, I might avoid using any library. But if I want to spend less time reinventing the wheel, I'll reach for a well-known library such as date-fns. Only thing is certain is that I'll avoid libraries like MomentJS since it results in an unnessary increase in bundle size.
+Depending on how much time I want to spend implementing all my requirements, I might avoid using any library. But if I want to spend less time reinventing the wheel, I'll reach for a well-known library such as [date-fns](https://date-fns.org/) that are [treeshakable](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking). Only thing is certain is that I'll avoid libraries like [MomentJS](https://momentjs.com/) since it results in an unnecessary increase in bundle size.
 
 Long story short, please consider the [alternatives](https://momentjs.com/docs/#/-project-status/recommendations/) to MomentJS.
 
