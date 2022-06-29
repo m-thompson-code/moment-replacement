@@ -4,6 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DateService {
+  /**
+   * Solution using Native Date instance
+   */
   getTomorrowData(): string {
     const now = Date.now();
 
@@ -12,7 +15,7 @@ export class DateService {
     const date = tomorrow.getDate();
     const month = tomorrow.getMonth() + 1;
     const year = tomorrow.getFullYear();
-    
+
     return `${year}-${this.getPaddedDigit(month)}-${this.getPaddedDigit(date)}`;
   }
 
