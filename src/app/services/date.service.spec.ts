@@ -19,7 +19,7 @@ describe('DateService', () => {
   });
 
   describe('getTomorrowData()', () => {
-    it('get tomorrow\'s date', () => {
+    it('should get tomorrow\'s date', () => {
       expect(service.getTomorrowData()).toBe('1990-09-02');
     });
   });
