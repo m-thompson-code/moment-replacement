@@ -6,7 +6,7 @@ This blog post will go over how to analyze your Angular bundle and pinpoint libr
 
 ## Why to Analyze Your Angular Bundle
 
-It's important to keep an eye on your project dependencies and call out the ones that are bloating your application. MomentJS used to be a stable in my projects until I realized how huge it was.
+It's important to keep an eye on your project dependencies and call out the ones that are bloating your application. MomentJS used to be a staple in my projects until I realized how huge it was.
 
 The following section will walk through how I came to the conclusion to avoid MomentJS for this [demo](https://m-thompson-code.github.io/moment-replacement/) where I display tomorrow's date.
 
